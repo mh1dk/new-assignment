@@ -5,12 +5,14 @@ const [data , setData] = useState([]);
 
 useEffect (() => {
     fetch("https://api.escuelajs.co/api/v1/products").then(res => res.json()).then(products => {setData(products)})
-})
+},[])
 
     return(
 
-        <div className="row">
+        <div className="container">
+            <div className="row">
             {data.map(item => <Product key={item.id} item={item} />)}
+        </div>
         </div>
 
 
